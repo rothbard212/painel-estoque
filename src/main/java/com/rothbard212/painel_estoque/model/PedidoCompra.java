@@ -21,7 +21,7 @@ public class PedidoCompra {
 
     public enum Status{
         PENDENTE, RECEBIDO, CANCELADO
-    };
+    }
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
