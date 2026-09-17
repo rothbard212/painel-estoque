@@ -23,7 +23,8 @@ public class Fornecedor {
     private String cnpj;
 
     @OneToMany(mappedBy = "fornecedor")
-    private List<Produto> produto;
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private List<Produto> produtos;
 
     @Column(nullable = false)
     private String contato;
