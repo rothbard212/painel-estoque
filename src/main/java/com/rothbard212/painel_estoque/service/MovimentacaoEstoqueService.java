@@ -9,8 +9,8 @@ import com.rothbard212.painel_estoque.repository.ProdutoRepository;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class MovimentacaoEstoqueService {
@@ -68,5 +68,9 @@ public class MovimentacaoEstoqueService {
         movimentacao.setReferencia(referencia);
 
         movimentacaoRepository.save(movimentacao);
+    }
+
+    public List<MovimentacaoEstoque> listarHistoricoPorProduto(Long produtoId) {
+        return movimentacaoRepository.findByProdutoIdOrderByIdDesc(produtoId);
     }
 }

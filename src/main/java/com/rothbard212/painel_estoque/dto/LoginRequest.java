@@ -1,4 +1,6 @@
 package com.rothbard212.painel_estoque.dto;
 
-public record LoginRequest(String email, String senha) {
+import jakarta.validation.constraints.NotBlank;
+
+public record LoginRequest(@NotBlank String email, @NotBlank String senha) {
 }

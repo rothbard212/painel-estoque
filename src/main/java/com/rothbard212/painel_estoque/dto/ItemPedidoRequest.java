@@ -1,5 +1,8 @@
 package com.rothbard212.painel_estoque.dto;
 
-public record ItemPedidoRequest(Long produtoId, Integer quantidade, Double precoUnitario) {
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
+public record ItemPedidoRequest(@NotNull Long produtoId, @NotNull @Positive Integer quantidade, @NotNull @Positive Double precoUnitario) {
 
 }

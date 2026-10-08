@@ -3,6 +3,7 @@ package com.rothbard212.painel_estoque.controller;
 import com.rothbard212.painel_estoque.dto.PedidoCompraRequest;
 import com.rothbard212.painel_estoque.model.PedidoCompra;
 import com.rothbard212.painel_estoque.service.PedidoCompraService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class PedidoCompraController {
     }
 
     @PostMapping
-    public PedidoCompra criar(@RequestBody PedidoCompraRequest request) {
+    public PedidoCompra criar(@Valid @RequestBody PedidoCompraRequest request) {
         return pedidoCompraService.criar(request);
     }
 

@@ -3,6 +3,7 @@ package com.rothbard212.painel_estoque.controller;
 import com.rothbard212.painel_estoque.dto.LoginRequest;
 import com.rothbard212.painel_estoque.dto.LoginResponse;
 import com.rothbard212.painel_estoque.service.AutenticacaoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class AutenticacaoController {
     }
 
     @PostMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest request) {
+    public LoginResponse login(@Valid @RequestBody LoginRequest request) {
         return autenticacaoService.login(request);
     }
 }

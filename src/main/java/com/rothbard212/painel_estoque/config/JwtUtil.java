@@ -41,7 +41,6 @@ public class JwtUtil {
             Jwts.parser().verifyWith(chave).build().parseSignedClaims(token);
             return true;
         } catch (Exception erro) {
-            System.out.println("ERRO AO VALIDAR TOKEN: " + erro.getClass().getSimpleName() + " - " + erro.getMessage());
             return false;
         }
     }
